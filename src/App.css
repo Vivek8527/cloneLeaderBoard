@@ -31,7 +31,7 @@ main{
 
 .bars{
     font-size: 25px;
-    flex-wrap: ;
+    flex-wrap: wrap-reverse;
     /* margin-top: 1rem; */
 
 }
@@ -58,13 +58,4 @@ main{
 } */
 
 
-.search_icon{
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-
-
-    /* border-radius: 20px; */
-
-}
 

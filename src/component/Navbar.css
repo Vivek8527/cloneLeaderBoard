@@ -1,0 +1,26 @@
+
+.search_icon{
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+
+
+    /* border-radius: 20px; */
+
+}
+.admin__icon{
+    color: rgb(137, 199, 224);
+    font-size: 2rem;
+}
+.container__admin{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
