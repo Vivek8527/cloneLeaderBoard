@@ -1,9 +1,9 @@
-.host_table{
+.host_table1{
     margin: 1.5rem 0;
 
 }
 
-.host_table{
+.host_table1{
     width: 100%;
     border-collapse: collapse ;
     /* border: 20px; */
@@ -11,14 +11,14 @@
 }
 
 
-.table_body{
+.table_body1{
     background-color: #E94B89;
     color: white;
-    font-size: 12px;
-    border: 10px;
+    font-size: 11px;
+    /* border: 10px; */
 }
 
-.host__table__data{
+.host__table__data1{
     border-bottom: 1px solid lightgrey;
     font-size: 15px;
     padding: 15px 0;
@@ -26,16 +26,16 @@
     /* border-style: ridge; */
 
 }
-.icon_arrow{
+.icon_arrow1{
     color: #E94B89;
 
 }
 
-.host__icon{
+.host__icon1{
     display: flex;
     align-items: center;
 }
 
 th{
-    padding: 5px;
+    padding: 6px;
 }

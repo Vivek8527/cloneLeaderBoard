@@ -7,10 +7,10 @@ export function Navbar() {
     <nav>
       <div className="search_icon">
         <PiMagnifyingGlassThin />
-        <input placeholder="Search" style={{borderRadius:"15px solid"}}></input>
+        <input placeholder="Search"></input>
       </div>
       <div className="container__admin">
-        <h1>Darren Ritchie </h1>
+        <h1 style={{ color: "#E94B89" }}>Darren Ritchie </h1>
         <div className="admin__icon">
           <FaUserAstronaut />
         </div>

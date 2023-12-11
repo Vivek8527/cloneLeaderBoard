@@ -7,13 +7,13 @@ const fakeDataArray = [
     name: "Vivek-singh",
     gender: "Male",
     dob: "03-05-1998",
-    email: "Vivek.singh@example.com",
-    pinCode: "250004",
+    email: "Vivek.singh@.com",
+    pinCode: 250004,
     country: "India",
     state: "Uttar pradesh",
     city: "Meerut",
     mobilenumber: 7252070137,
-    professiuon: "IT",
+    profession: "IT",
     Bio: "Single",
   },
 ];
@@ -37,7 +37,7 @@ const Table = () => {
           <th className="table_body">Gender</th>
           <th className="table_body">Date Of Birth</th>
           <th className="table_body">Email Id</th>
-          <th className="table_body">Pin code</th>
+          <th className="table_body">Pincode</th>
           <th className="table_body">Country</th>
           <th className="table_body">State</th>
           <th className="table_body">City</th>
@@ -57,7 +57,7 @@ const Table = () => {
               <td className="host__table__data">{rowData.gender}</td>
               <td className="host__table__data">{rowData.dob}</td>
               <td className="host__table__data">{rowData.email}</td>
-              <td className="host__table__data">{rowData.pincode}</td>
+              <td className="host__table__data">{rowData.pinCode}</td>
               <td className="host__table__data">{rowData.country}</td>
               <td className="host__table__data">{rowData.state}</td>
               <td className="host__table__data">{rowData.city}</td>

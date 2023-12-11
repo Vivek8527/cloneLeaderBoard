@@ -17,7 +17,13 @@ const Sidebar = () => {
       path: "/allHost",
       name: "All Host",
       icon: "",
+      
     },
+    {
+      path:"/Hostmanagement",
+      name:"Hostmanagement",
+      icon:""
+    }
   ];
 
   return (
