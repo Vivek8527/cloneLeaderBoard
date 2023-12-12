@@ -37,7 +37,7 @@ main{
 
 }
 .link{
-    display: flex;
+   
     background-color: white;
     color: #E94B89;
     gap: 25px;
@@ -46,13 +46,14 @@ main{
     text-decoration: none;
     border-top-left-radius: 18px;
     /* height: 5rem; */
-    margin-left: 4rem;
+    margin-left: 3.0rem;
     cursor: pointer;
     /* margin-left: 22px; */
     margin-bottom: 15px;
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    padding-inline: 7px;
     
 }
 
@@ -60,7 +61,7 @@ main{
 .link:hover{
     background-color:#E94B89 ;
     transition: all 0.4s;
-    color: rgb(24, 18, 22);
+    color: white;
 }
 
 

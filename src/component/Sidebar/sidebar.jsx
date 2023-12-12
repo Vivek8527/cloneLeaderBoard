@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-// import dashboardImage from "../../assets/images/dashboard.png";
+// import { LuLayoutDashboard } from "react-icons/fa";
 import { LuLayoutDashboard } from "react-icons/lu";
+import { FaSnapchatGhost } from "react-icons/fa";
 
 // import "./App.css";
 // eslint-disable-next-line react/prop-types
@@ -19,7 +20,7 @@ const Sidebar = () => {
     {
       path: "/allHost",
       name: "All Host",
-      icon: "",
+      icon: <FaSnapchatGhost />,
     },
     {
       path: "/Hostmanagement",
