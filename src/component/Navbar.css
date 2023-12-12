@@ -6,17 +6,28 @@
 }
 .admin__icon{
     color: rgb(137, 199, 224);
-    font-size: 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+
 }
 .container__admin{
     display: flex;
     /* justify-content: center; */
     align-items: center;
     justify-content: flex-end;
-    gap: 7px;
+    gap: 10px;
+    padding-right: 5rem;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
+}
+.admin__options{
+    color: blueviolet;
+    font-size: 15px;
+    position: fixed;
+    cursor: pointer;
+    
+
 }

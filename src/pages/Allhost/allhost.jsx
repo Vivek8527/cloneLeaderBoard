@@ -1,4 +1,3 @@
-import "./table.css";
 import { FaArrowLeft } from "react-icons/fa";
 const fakeDataArray = [
   {

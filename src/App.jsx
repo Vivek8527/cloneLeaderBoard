@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import sidebar from "./component/sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import AllHost from "../src/pages/Allhost/index";
-import Hostmanagement from "../src/pages/Allhost/Table/Table2/table2";
-
 import "./App.css";
 import Layout from "./pages/Layout/layout";
+import HostEarning from "./pages/Hostearning/HostEarning";
+import Hostmanagement from "./pages/Hostmanagement/hostmanagement"
+import Allhost from "./pages/Allhost/allhost"
+import Acceptedhost from "./pages/Acceptedhost/acceptedhost";
 
 const App = () => {
   return (
@@ -13,13 +14,17 @@ const App = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/" element={<>Navbar</>} />
+            <Route path="/" element={<></>} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/allHost" element={<AllHost />} />
             <Route path="/Hostmanagement" element={<Hostmanagement />} />
+            <Route path="/Hostearning" element={<HostEarning />} />
+            <Route path="/allhost" element={<Allhost />} />
+            <Route path="/Acceptedhost" element={<Acceptedhost />} />
           </Routes>
         </Layout>
       </BrowserRouter>
+      
+
     </>
   );
 };

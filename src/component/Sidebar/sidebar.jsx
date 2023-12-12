@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+// import dashboardImage from "../../assets/images/dashboard.png";
+import { LuLayoutDashboard } from "react-icons/lu";
+
 // import "./App.css";
 // eslint-disable-next-line react/prop-types
 const Sidebar = () => {
@@ -10,20 +13,29 @@ const Sidebar = () => {
     {
       path: "/dashboard",
       name: "Dashboard",
-      icon: "",
+      icon: <LuLayoutDashboard />,
     },
 
     {
       path: "/allHost",
       name: "All Host",
       icon: "",
-      
     },
     {
-      path:"/Hostmanagement",
-      name:"Hostmanagement",
-      icon:""
-    }
+      path: "/Hostmanagement",
+      name: "Hostmanagement",
+      icon: "",
+    },
+    {
+      path: "/Hostearning",
+      name: "Hostearning",
+      icon: "",
+    },
+    {
+      path: "/Acceptedhost",
+      name: "Acceptedhost",
+      icon: "",
+    },
   ];
 
   return (

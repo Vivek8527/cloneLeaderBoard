@@ -1,4 +1,4 @@
-import Sidebar from "../../component/sidebar";
+import Sidebar from "../../component/Sidebar/sidebar";
 import { Navbar } from "../../component/Navbar";
 
 // eslint-disable-next-line react/prop-types

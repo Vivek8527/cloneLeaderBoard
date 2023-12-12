@@ -15,8 +15,9 @@ main{
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     opacity: 90%;
-    border-right: 12px solid #e784ba;
-    box-shadow: 10px 0 #e07ba4;
+    border-right: 12px solid #e38cbc;
+    box-shadow: 10px 0 #efb8ce;
+    overflow: hidden;
 
 
 
@@ -33,30 +34,41 @@ main{
     font-size: 30px;
     /* margin-top: 1rem; */
 
+
 }
 .link{
     display: flex;
     background-color: white;
     color: #E94B89;
-    gap: 15px;
+    gap: 25px;
     transition: all 0.5s;
     font-size: 1.5rem;
     text-decoration: none;
     border-top-left-radius: 18px;
     /* height: 5rem; */
-    margin-left: 3rem;
+    margin-left: 4rem;
     cursor: pointer;
     /* margin-left: 22px; */
-    margin-bottom: 12px
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
 
-/* .link:hover{
-    background-color:#ff0991 ;
+.link:hover{
+    background-color:#E94B89 ;
     transition: all 0.4s;
     color: rgb(24, 18, 22);
-} */
+}
 
 
 
+.active{
+    /* background-color: aqua; */
+}
+
+.dashboard_image {
+    width: 50px;
+}
