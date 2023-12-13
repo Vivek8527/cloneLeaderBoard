@@ -5,8 +5,10 @@ import { FaUserSecret, FaCoins, FaUsers } from "react-icons/fa";
 const Box = ({ title, icon, numbers }) => {
   return (
     <div className="box">
-      <p style={{ padding: ".4rem", fontSize: "1.0rem",fontWeight:"bold" }}>{title}</p>
-      <p >{numbers}</p>
+      <p style={{ padding: ".4rem", fontSize: "1.0rem", fontWeight: "bold" }}>
+        {title}
+      </p>
+      <p>{numbers}</p>
       <span style={{ fontSize: "1.8rem" }}>{icon}</span>
     </div>
   );

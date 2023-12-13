@@ -15,8 +15,8 @@
     /* justify-content: center; */
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
-    padding-right: 5rem;
+    gap: 8px;
+
 }
 
 nav{
@@ -24,7 +24,7 @@ nav{
     justify-content: space-between;
 }
 .admin__options{
-    color: blueviolet;
+    color: blueviolet;  
     font-size: 15px;
     position: fixed;
     cursor: pointer;

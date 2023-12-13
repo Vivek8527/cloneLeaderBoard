@@ -19,11 +19,11 @@ const fakeDataArray = [
   },
 ];
 // console.log(fakeDataArray);
-const Acceptedhost = () => {
+const Hostrequest = () => {
   return (
-    <TableContainer title={"Accepted Host"}>
-    {/* <FaArrowLeft /> */}
-      
+    <TableContainer title={"Host Request"}>
+      {/* <FaArrowLeft /> */}
+
       <table className="host_table">
         <thead>
           <th className="table_body">S.NO.</th>
@@ -69,4 +69,4 @@ const Acceptedhost = () => {
     </TableContainer>
   );
 };
-export default Acceptedhost;
+export default Hostrequest;

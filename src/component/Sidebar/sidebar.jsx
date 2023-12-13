@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-// import { LuLayoutDashboard } from "react-icons/fa";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { FaSnapchatGhost } from "react-icons/fa";
 
-// import "./App.css";
-// eslint-disable-next-line react/prop-types
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [activeItem, setActiveItem] = useState(null);
+
   const toggle = () => setIsOpen(!isOpen);
+  const toggleSubMenu = (index) =>
+    setActiveItem(activeItem === index ? null : index);
+
   const menuItem = [
     {
       path: "/dashboard",
@@ -18,30 +20,42 @@ const Sidebar = () => {
     },
 
     {
-      path: "/allHost",
+      // path: "/allHost",
       name: "All Host",
       icon: <FaSnapchatGhost />,
-    },
-    {
-      path: "/Hostmanagement",
-      name: "Hostmanagement",
-      icon: "",
-    },
-    {
-      path: "/Hostearning",
-      name: "Hostearning",
-      icon: "",
-    },
-    {
-      path: "/Acceptedhost",
-      name: "Acceptedhost",
-      icon: "",
+      subMenu: [
+        {
+          path: "/Hostmanagement",
+          name: "Hostmanagement",
+          icon: "",
+        },
+        {
+          path: "/Acceptedhost",
+          name: "Acceptedhost",
+          icon: "",
+        },
+        {
+          path: "/Hostearning",
+          name: "Hostearing",
+          icon: "",
+        },
+        {
+          path: "/Hostrejected",
+          name: "Hostrejected",
+          icon: "",
+        },
+        {
+          path: "/Hostrequest",
+          name: "Hostrequest",
+          icon: "",
+        },
+      ],
     },
   ];
 
   return (
     <div className="container">
-      <div style={{ width: isOpen ? "250px" : "50px" }} className="sidebar">
+      <div style={{ width: isOpen ? "250px" : "60px" }} className="sidebar">
         <div className="top_section">
           <h1
             style={{ display: isOpen ? "block" : "none" }}
@@ -54,20 +68,32 @@ const Sidebar = () => {
         </div>
 
         {menuItem.map((item, index) => (
-          <NavLink
-            to={item.path}
-            key={index}
-            className="link"
-            activeclassName="active"
-          >
-            <div className="icon">{item.icon}</div>
-            <div
-              style={{ width: isOpen ? "block" : "none" }}
-              className="link-text"
-            >
-              {item.name}
-            </div>
-          </NavLink>
+          <div key={index} onClick={() => toggleSubMenu(index)}>
+            <NavLink to={item.path} className="link" activeClassName="active">
+              <div className="icon">{item.icon}</div>
+              <div
+                style={{ width: isOpen ? "block" : "none" }}
+                className="link-text"
+              >
+                {item.name}
+              </div>
+            </NavLink>
+            {item.subMenu && index === activeItem && (
+              <>
+                {item.subMenu.map((subItem, subIndex) => (
+                  <NavLink
+                    to={subItem.path}
+                    key={subIndex}
+                    className="sub-link-text"
+                    // activeClassName="active"
+                  >
+                    <div className="icon">{subItem.icon}</div>
+                    <div className="sub-link-text">{subItem.name}</div>
+                  </NavLink>
+                ))}
+              </>
+            )}
+          </div>
         ))}
       </div>
     </div>

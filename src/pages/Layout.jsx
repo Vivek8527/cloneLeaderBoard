@@ -1,5 +1,5 @@
-import Sidebar from "../../component/Sidebar/sidebar";
-import { Navbar } from "../../component/Navbar";
+import Sidebar from "../component/Sidebar/sidebar";
+import { Navbar } from "../../src/component/Navbar";
 
 // eslint-disable-next-line react/prop-types
 function Layout({ children }) {
