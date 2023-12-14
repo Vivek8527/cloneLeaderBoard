@@ -1,7 +1,9 @@
 .search_icon{
-    font-size: 1.3rem;
+    font-size: 20px;
     display: flex;
     align-items: center;
+    /* position: absolute; */
+    border: none;
 
 }
 .admin__icon{
@@ -15,7 +17,7 @@
     /* justify-content: center; */
     align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 10px;
 
 }
 
@@ -23,11 +25,4 @@ nav{
     display: flex;
     justify-content: space-between;
 }
-.admin__options{
-    color: blueviolet;  
-    font-size: 15px;
-    position: fixed;
-    cursor: pointer;
-    
 
-}

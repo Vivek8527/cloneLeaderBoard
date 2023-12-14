@@ -68,8 +68,13 @@ const Sidebar = () => {
         </div>
 
         {menuItem.map((item, index) => (
-          <div key={index} onClick={() => toggleSubMenu(index)}>
-            <NavLink to={item.path} className="link" activeClassName="active">
+          <div key={index}>
+            <NavLink
+              to={item.path}
+              onClick={() => toggleSubMenu(index)}
+              className="link"
+              activeClassName="active"
+            >
               <div className="icon">{item.icon}</div>
               <div
                 style={{ width: isOpen ? "block" : "none" }}

@@ -38,37 +38,41 @@ main{
 }
 
 
+
  .link{
-    background-color: white;
-    color: #E94B89;
-    gap: 15px;   
+    /* background-color: white; */
+    color:white;
+    gap: 18px;   
     transition: all 0.2s;
     font-size: 1.5rem;   
     text-decoration: none;
     border-top-left-radius: 20px;
     height: 2.8rem;
-     /* margin-left: 1rem; */
+     margin-left: 80px;
     cursor: pointer; 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     display: flex;
      align-items: center;
     padding-inline: 6px;
-    padding-left: 100px;
+    /* padding-left: 100px; */
+
     
+}
+.link:hover{
+    background-color: white;
 }
 
 .link-text{
-    font-size: 20px;
+    font-size: 15px;
     /* padding: 10px;   */
     cursor: pointer;
     /* text-align: start;    */
     /* padding-right: 30px; */
-    background-color: #fff;
-    color: #E94B89;
+    /* background-color: #fff; */
+    color: white;
     /* padding-left: 20px; */
     /* padding-left: 5rem; */
-    
-    
+    height: 20px;
     
 }
 .link-text:hover{
@@ -82,8 +86,11 @@ main{
 .sub-link-text{
     text-decoration: none;
     color: #fff;
-    /* padding-left: 0 0 10px; */
-    font-size: 20px; 
-    padding-right: 20px;
+    padding-left: 90px; 
+    font-size: 20px;
+    /* height: 20px;     */
+    margin-bottom: -30px;
+    /* position: fixed; */
+    /* position: static; */
 
 }
