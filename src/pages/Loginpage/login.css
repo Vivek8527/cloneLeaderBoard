@@ -1,0 +1,78 @@
+.login_container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/images/Background1.jpg");
+    background-position: right;
+    background-size: cover;
+    object-fit: contain;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.login_input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d23373;
+}
+
+.login_left_side{
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: rgba(255,255,255,0.457);
+}
+
+.login_contetnt_container{
+    width: 30vw;
+    height: 70vh;
+    border-radius: 10px;
+    /* font-size: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: rgba(0 , 0, 0, 24) 0px 3px 8px;
+    background-color: rgb(255,255,255);
+
+
+}
+.login_heading{
+    /* font-weight: 200px; */
+    font-size: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    /* gap: 40px; */
+    
+
+}
+.login_right_half{
+    width: 50vw;
+    height: 100vh;   
+}
+.login_button{
+    background-color: #ef2d7a;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.shudhlove_logo{
+    width: 350px;
+    padding-right: 12rem;
+}
+
+.eye_icons{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+    gap: 10px;
+    /* background-color: red; */
+}

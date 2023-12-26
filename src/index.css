@@ -18,6 +18,8 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f5e7ee; */
   }
   /*
     5. Improve media defaults

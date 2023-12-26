@@ -1,5 +1,5 @@
+import { Navbar } from "../component/Navbar/Navbar";
 import Sidebar from "../component/Sidebar/sidebar";
-import { Navbar } from "../../src/component/Navbar";
 
 // eslint-disable-next-line react/prop-types
 function Layout({ children }) {
@@ -11,8 +11,8 @@ function Layout({ children }) {
     >
       <Sidebar />
       <main>
-        <Navbar></Navbar>
-
+       
+      <Navbar />
         {children}
       </main>
     </div>

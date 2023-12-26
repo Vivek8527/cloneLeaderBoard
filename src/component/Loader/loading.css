@@ -1,0 +1,21 @@
+.loader__{
+
+    font-size: 5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E94B89;
+   
+}
+.loader_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(240, 248, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

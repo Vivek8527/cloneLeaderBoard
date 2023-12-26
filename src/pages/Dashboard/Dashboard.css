@@ -1,20 +1,24 @@
 .color_1{
     background-color: #E94B89;
-    width: 100%;
+    width: 99%;
     height: 22vh;
     border-radius: 20px;
     opacity: 80%;
-    margin:  2rem 0;
+    margin:  1.2rem 0;
+    font-family: sans-serif;
+    /* box-shadow: 1px 1px 2px yellow; */
    
 }
 
 .box{
     width: 200px;
-    height: 130px;
+    height: max-content;
     border-radius: 10px;
-    background-color: rgb(249, 245, 240);
+    background-color: white;
     border: none;
+    padding-inline: 0.2rem;
     transition: all 0.8 ease-in-out;
+
 
   
 }
@@ -25,6 +29,43 @@
 .four_boxes{
     display: flex;
     justify-content: space-between;
-    padding: 3rem;
+    padding-block: 3rem;
+    padding-inline: 3rem;
     
 }
+
+.box_title{
+    padding: 0.5rem;
+    font-weight: bolder;
+    font-size: 1.0rem;
+
+}
+.box_numbers{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+.box_colors{
+    box-shadow: 1px 1px 3px darkgoldenrod;
+}
+
+
+.box_progressbar {
+    margin-top: 8px;
+    padding: 5px;
+  }
+  
+  .custom-progress-bar {
+    height: 7px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    transition: width 0.3s ease;
+  }

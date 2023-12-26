@@ -1,71 +1,102 @@
-import { FaArrowLeft } from "react-icons/fa";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+import { useEffect, useState } from "react";
 import TableContainer from "../../component/Tablecontainer/TableContainer";
-const fakeDataArray = [
-  {
-    id: 1,
-    hostId: "123",
-    name: "Vivek-singh",
-    gender: "Male",
-    dob: "03-05-1998",
-    email: "Vivek.singh@",
-    city: "Meerut",
-    Phonenumber: 7252070137,
-    CreatedAt: "Uttar pradesh",
-    AdharNumber: 1234567890,
-    StickerCoin: 50,
-    VideoCoin: 70,
-    TotalCoin: 120,
-    Status: "Single",
-  },
-];
-// console.log(fakeDataArray);
+import axios from "../../config/axios";
+import baseUrl from "../../baseUrl";
+import Loading from "../../component/Loader/loading";
+import { PiAlignBottom } from "react-icons/pi";
+import Pagination from "../Pagination/pagination";
+// import { Pagination } from "@mui/material";
+// import Pagination from "../Pagination/pagination";
+
+
 const Hostrequest = () => {
+  const [getHostRequest, setgetHostRequest] = useState(null);
+  const [isloading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [page, setPage] = useState(1);
+  const [ perPage, setPerPage] = useState(10);
+  const [totalcount ,setTotalCount] =useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  useEffect(() => {
+    fetchHostRequest();
+  }, [page,perPage]);
+
+  const fetchHostRequest = () => {
+  
+   
+    axios
+      .post(baseUrl + "leader/getLeaderHostPending", {
+        page,
+        perPage,
+      })
+
+      .then((res) => {
+        setgetHostRequest(res.data.result);
+        setTotalCount(res?.data?.totalCount);
+        setTotalPages(res?.data?.totalPages);
+        console.log(res);
+      })
+      .catch(() => {
+        setError(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+  
+ 
+
   return (
     <TableContainer title={"Host Request"}>
-      {/* <FaArrowLeft /> */}
-
+    
       <table className="host_table">
         <thead>
-          <th className="table_body">S.NO.</th>
-          <th className="table_body">ID</th>
-          <th className="table_body">Host ID</th>
-          <th className="table_body">Name</th>
-          <th className="table_body">Email ID</th>
-          <th className="table_body">Phone number</th>
-          <th className="table_body">Accepted At</th>
-          <th className="table_body">Charge min</th>
-          <th className="table_body">Stickers Coin</th>
-          <th className="table_body">Video Coins</th>
-          <th className="table_body">Gift coins</th>
-          <th className="table_body">Call Coin</th>
-          <th className="table_body">Total Earning</th>
-          <th className="table_body">Leader</th>
-          {/* <th className="table_body">Image/Video</th> */}
-          {/* <th className="table_body">Action</th> */}
+          <th>S.NO</th>
+          <th>Host ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of birth</th>
+          <th>Profession</th>
+          <th>Bio</th>
+          <th>Image/Video</th>
         </thead>
 
         <tbody>
-          {fakeDataArray.map((rowData, index) => (
-            <tr key={index}>
-              <td className="host__table__data">{index + 1}</td>
-              <td className="host__table__data">{rowData.hostId}</td>
-              <td className="host__table__data">{rowData.name}</td>
-              <td className="host__table__data">{rowData.gender}</td>
-              <td className="host__table__data">{rowData.dob}</td>
-              <td className="host__table__data">{rowData.email}</td>
-              <td className="host__table__data">{rowData.city}</td>
-              <td className="host__table__data">{rowData.Phonenumber}</td>
-              <td className="host__table__data">{rowData.CreatedAt}</td>
-              <td className="host__table__data">{rowData.AdharNumber}</td>
-              <td className="host__table__data">{rowData.StickerCoin}</td>
-              <td className="host__table__data">{rowData.VideoCoin}</td>
-              <td className="host__table__data">{rowData.TotalCoin}</td>
-              <td className="host__table__data">{rowData.Status}</td>
-              {/* <td>{rowData.image/video}</td> */}
+          {getHostRequest && getHostRequest?.length > 0 ? (
+            getHostRequest?.map((rowData, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{rowData?._id}</td>
+                <td>{rowData?.name}</td>
+                <td>{rowData?.gender}</td>
+                <td>{rowData?.dateOfBirth}</td>
+                <td>{rowData?.proffession}</td>
+                <td>{rowData?.addBio}</td>
+                <td>{rowData?.ImageVideo}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="8">NO DATA FOUND</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
+      <Pagination
+          page={page}
+          setPage={setPage}
+          perPage={perPage}
+          setPerPage={setPerPage}
+          totalCount={totalcount}
+          totalPages={totalPages}
+          options={[1, 2, 5, 10]}
+        />
+     
+      {isloading && <Loading />}
     </TableContainer>
   );
 };

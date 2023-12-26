@@ -2,7 +2,8 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { FaSnapchatGhost } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+import "./sidebar.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -22,21 +23,11 @@ const Sidebar = () => {
     {
       // path: "/allHost",
       name: "All Host",
-      icon: <FaSnapchatGhost />,
+      icon: <CgProfile />,
       subMenu: [
         {
-          path: "/Hostmanagement",
-          name: "Hostmanagement",
-          icon: "",
-        },
-        {
-          path: "/Acceptedhost",
-          name: "Acceptedhost",
-          icon: "",
-        },
-        {
-          path: "/Hostearning",
-          name: "Hostearing",
+          path: "/Hostaccepted",
+          name: "Hostaccepted",
           icon: "",
         },
         {
@@ -55,7 +46,7 @@ const Sidebar = () => {
 
   return (
     <div className="container">
-      <div style={{ width: isOpen ? "250px" : "60px" }} className="sidebar">
+      <div style={{ width: isOpen ? "220px" : "52px" }} className="sidebar">
         <div className="top_section">
           <h1
             style={{ display: isOpen ? "block" : "none" }}
