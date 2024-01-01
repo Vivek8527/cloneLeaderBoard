@@ -1,8 +1,9 @@
 .search_icon{
+    font-family: sans-serif;
     display: flex;
     align-items: center;
-    /* background-color: #e8b2ce; */
-    padding: 3px;
+    width: 20vw;
+    padding: 5px;
     border-radius: 20px;
     border: 1px solid black;
     height: 30px;
@@ -16,7 +17,7 @@
 }
 .admin__icon{
     /* color: rgb(137, 199, 224); */
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     cursor: pointer;
     color: #f73097;
 
@@ -24,9 +25,10 @@
 .container__admin{
     display: flex;
     align-items: center;
-    /* justify-content: flex-end; */
     cursor: pointer;
-    gap: 10px;
+    gap: 8px;
+    justify-content: flex-end;
+    /* height: 5px; */
 }
 
 nav{

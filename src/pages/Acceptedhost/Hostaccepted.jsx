@@ -2,13 +2,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { FaArrowLeft } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import baseUrl from "../../baseUrl";
 import TableContainer from "../../component/Tablecontainer/TableContainer";
 import axios from "../../config/axios";
 import Loading from "../../component/Loader/loading";
 import Pagination from "../Pagination/pagination";
 import { GrCursor } from "react-icons/gr";
+import { PiMagnifyingGlassThin } from "react-icons/pi";
 
 const Acceptedhost = () => {
   const [getacceptedhost, setgetAcceptedhost] = useState([]);
@@ -17,16 +18,19 @@ const Acceptedhost = () => {
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [totalCount, setTotalCount] = useState(1);
-  // const [currentPage, setCurrentPage] = useState("");
   const [totalPages, setTotalPages] = useState(1);
+  const [ value ,setValue] = useState ("");
+
+
 
   useEffect(() => {
     fetchacceptedhost();
-  }, [page, perPage]);
+  }, [page, perPage, value]);
 
   const fetchacceptedhost = () => {
     axios
       .post(baseUrl + "leader/getLeaderHostlistAccepted", {
+        key: value,
         page,
         perPage,
       })
@@ -47,6 +51,14 @@ const Acceptedhost = () => {
 
   return (
     <>
+      <div className="search_icon">
+        <PiMagnifyingGlassThin />
+        <input
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Search"
+        ></input>
+      </div>
+
       <TableContainer title={"Host Accepted"}>
         <table className="host_table">
           <thead>

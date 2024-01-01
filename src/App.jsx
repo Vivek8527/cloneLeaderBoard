@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import "./App.css";
 import Layout from "./pages/Layout";
-import Hostrejected from "./pages/Hostrejected/hostrejected";
+import Hostrejected from "./pages/Hostrejected/Hostrejected";
 import Hostaccepted from "./pages/Acceptedhost/Hostaccepted";
 import HostRequest from "./pages/Hostrequest/Hostrequest";
 import Loginpage from "./pages/Loginpage/login";

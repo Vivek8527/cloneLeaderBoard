@@ -21,6 +21,7 @@ const Dashboard = () => {
   return (
     <div>
     
+      <Navbar/>
       <Boxes />
       <Graph />
     </div>

@@ -6,30 +6,29 @@ import TableContainer from "../../component/Tablecontainer/TableContainer";
 import axios from "../../config/axios";
 import baseUrl from "../../baseUrl";
 import Loading from "../../component/Loader/loading";
-import { PiAlignBottom } from "react-icons/pi";
+import { PiAlignBottom, PiMagnifyingGlassThin } from "react-icons/pi";
 import Pagination from "../Pagination/pagination";
-// import { Pagination } from "@mui/material";
-// import Pagination from "../Pagination/pagination";
-
+import { FaEye } from "react-icons/fa";
 
 const Hostrequest = () => {
   const [getHostRequest, setgetHostRequest] = useState(null);
   const [isloading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [page, setPage] = useState(1);
-  const [ perPage, setPerPage] = useState(10);
-  const [totalcount ,setTotalCount] =useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [totalcount, setTotalCount] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [value, setValue] = useState("");
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
     fetchHostRequest();
-  }, [page,perPage]);
+  }, [page, perPage, value]);
 
   const fetchHostRequest = () => {
-  
-   
     axios
       .post(baseUrl + "leader/getLeaderHostPending", {
+        key: value,
         page,
         perPage,
       })
@@ -47,46 +46,67 @@ const Hostrequest = () => {
         setIsLoading(false);
       });
   };
-  
- 
+
+  const handleImage = () => {
+    setShowImage(true);
+  };
+
+  const handleImageClose = () => {
+    setShowImage(false);
+  };
 
   return (
-    <TableContainer title={"Host Request"}>
-    
-      <table className="host_table">
-        <thead>
-          <th>S.NO</th>
-          <th>Host ID</th>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>Date of birth</th>
-          <th>Profession</th>
-          <th>Bio</th>
-          <th>Image/Video</th>
-        </thead>
+    <>
+      <div className="search_icon">
+        <PiMagnifyingGlassThin />
+        <input
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Search"
+        ></input>
+      </div>
+      <TableContainer title={"Host Request"}>
+        <table className="host_table">
+          <thead>
+            <th>S.NO</th>
+            <th>Host ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>Profession</th>
+            <th>Bio</th>
+            <th>Image/Video</th>
+          </thead>
 
-        <tbody>
-          {getHostRequest && getHostRequest?.length > 0 ? (
-            getHostRequest?.map((rowData, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{rowData?._id}</td>
-                <td>{rowData?.name}</td>
-                <td>{rowData?.gender}</td>
-                <td>{rowData?.dateOfBirth}</td>
-                <td>{rowData?.proffession}</td>
-                <td>{rowData?.addBio}</td>
-                <td>{rowData?.ImageVideo}</td>
+          <tbody>
+            {getHostRequest && getHostRequest?.length > 0 ? (
+              getHostRequest?.map((rowData, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{rowData?._id}</td>
+                  <td>{rowData?.name}</td>
+                  <td>{rowData?.gender}</td>
+                  <td>{rowData?.dateOfBirth}</td>
+                  <td>{rowData?.proffession}</td>
+                  <td>{rowData?.addBio}</td>
+                  <td
+                    style={{
+                      textAlign: "-webkit-center",
+                    }}
+                  >
+                    <FaEye
+                      onClick={() => handleImage(rowData?.presentationPic)}
+                    />
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="8">NO DATA FOUND</td>
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="8">NO DATA FOUND</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <Pagination
+            )}
+          </tbody>
+        </table>
+        <Pagination
           page={page}
           setPage={setPage}
           perPage={perPage}
@@ -95,9 +115,11 @@ const Hostrequest = () => {
           totalPages={totalPages}
           options={[1, 2, 5, 10]}
         />
-     
-      {isloading && <Loading />}
-    </TableContainer>
+
+        {isloading && <Loading />}
+      </TableContainer>
+      
+    </>
   );
 };
 export default Hostrequest;

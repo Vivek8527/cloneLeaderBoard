@@ -5,6 +5,7 @@ import { Box } from "./Box";
 export const Boxes = () => {
   const { getactivehost, getInactivehost, getnewrequest, gettotalcoin } =
     useDashboardHook();
+  
 
   return (
     <div className="color_1">

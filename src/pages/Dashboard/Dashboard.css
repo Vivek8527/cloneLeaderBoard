@@ -1,7 +1,7 @@
 .color_1{
     background-color: #E94B89;
     width: 99%;
-    height: 22vh;
+    max-height: 20vh;
     border-radius: 20px;
     opacity: 80%;
     margin:  1.2rem 0;
@@ -28,7 +28,8 @@
 }
 .four_boxes{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
     padding-block: 3rem;
     padding-inline: 3rem;
     

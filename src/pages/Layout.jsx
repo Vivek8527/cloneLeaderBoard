@@ -12,7 +12,7 @@ function Layout({ children }) {
       <Sidebar />
       <main>
        
-      <Navbar />
+      
         {children}
       </main>
     </div>
