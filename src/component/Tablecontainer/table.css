@@ -15,7 +15,9 @@
 th{
     background-color: #E94B89;
     color: white;
-    font-size: 11px;
+    font-size: 13px;
+    padding: 5px;
+
   
 
 }
@@ -26,10 +28,13 @@ td{
     padding: 10px 0;
     text-align: center;
     padding: 5px;
+    cursor: pointer;
 
 }
 .icon_arrow{
     color: #E94B89;
+    margin: 1rem 0;
+    cursor: pointer;
 
 }
 
@@ -38,10 +43,6 @@ td{
     align-items: center;
 }
 
-th{
-    padding: 5px;
-    /* margin: 15px; */
-}
 
  .pagination_ {
     display: flex;

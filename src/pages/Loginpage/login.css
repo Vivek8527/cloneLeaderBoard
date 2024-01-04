@@ -26,11 +26,10 @@
     background-color: rgba(255,255,255,0.457);
 }
 
-.login_contetnt_container{
-    width: 30vw;
-    height: 70vh;
+.login_content_container{
+    width: 28vw;
+    height: 74vh;
     border-radius: 10px;
-    /* font-size: 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,13 +41,11 @@
 
 }
 .login_heading{
-    /* font-weight: 200px; */
-    font-size: 30px;
-    text-align: center;
-    font-family: sans-serif;
-    /* gap: 40px; */
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif;
     
-
 }
 .login_right_half{
     width: 50vw;
@@ -64,7 +61,7 @@
 }
 
 .shudhlove_logo{
-    width: 350px;
+    width: fit-content;
     padding-right: 12rem;
 }
 
@@ -76,3 +73,83 @@
     gap: 10px;
     /* background-color: red; */
 }
+
+.forgot_password_container {
+    width: 11vw;
+    height: 11vh;
+    background-color: #ef2d7a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .forgot_container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/images/Background1.jpg");
+    background-position: right;
+    background-size: cover;
+    object-fit: contain;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+  }
+  
+  .forgot_left_side {
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: rgba(255,255,255,0.457);
+
+  }
+  
+  .forgot_content_container {
+    width: 28vw;
+    height: 74vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: rgba(0 , 0, 0, 24) 0px 3px 8px;
+    background-color: rgb(255,255,255);
+
+  }
+  
+  .shudhlove_logooo {
+    width: fit-content;
+    padding-right: 12rem;
+  }
+  
+  .logout_input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d23373;
+  }
+  
+  .Submit_button {
+    background-color: #d23373;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .logout_right_half{
+    width: 50vw;
+    height: 100vh;   
+  }
+  .logout_heading{
+    font-size: 30px;
+    display: flex;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif;
+    
+  }

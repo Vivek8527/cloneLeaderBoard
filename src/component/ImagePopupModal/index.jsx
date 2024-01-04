@@ -1,14 +1,11 @@
 /* eslint-disable react/prop-types */
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-
 import "swiper/css";
-
 import "./style.css";
-import Swiper from "swiper";
 
 const style = {
   position: "absolute",
@@ -18,17 +15,19 @@ const style = {
   width: "auto",
   height: "auto",
   textAlign: "center",
-  overflow: "scroll",
+  // overflow: "scroll",
   border: "none",
   outline: "none",
-  borderRadius: "10px",
+  borderRadius: "7px",
   bgcolor: "white",
   boxShadow: 24,
   padding: "1rem",
-  p: 2,
+  // p: 2,
 };
 
+// eslint-disable-next-line react/prop-types
 const ImagePopUpModal = ({ open, handleClose, header, img, images }) => {
+  const swiper = useSwiper();
   const SUPPORTED_IMAGE_FORMATS = ["jpg", "jpeg", "png", "webp", "pdf"];
 
   const getUrlExtension = (url) => {
@@ -59,7 +58,8 @@ const ImagePopUpModal = ({ open, handleClose, header, img, images }) => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              {images.length > 0 &&
+              {images?.length > 0 &&
+                // eslint-disable-next-line react/prop-types
                 images.map((image) => (
                   <SwiperSlide key={image} className="swiper__container">
                     {SUPPORTED_IMAGE_FORMATS.includes(

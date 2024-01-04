@@ -1,0 +1,42 @@
+.Reoprt_dropdown_select {
+width: 16vw;
+height: 5vh;
+
+}
+
+.Report_dropdown{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+.calendar-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+  }
+  
+  .date-picker {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #ef73b3;
+    color: white;
+    border: none;
+    width: 8vw;
+    height: 5vh;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f73097;
+  }
+  

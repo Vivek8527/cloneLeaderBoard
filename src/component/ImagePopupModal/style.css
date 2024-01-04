@@ -1,15 +1,18 @@
 .image__popup__styling {
-    max-width: 400px;
+    /* max-width: 400px; */
     max-height: 80vh;
     object-fit: contain;
     text-align: center;
   }
   
   .swiper__container {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
+  
+
   

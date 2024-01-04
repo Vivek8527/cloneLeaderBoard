@@ -18,7 +18,8 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Roboto Slab', serif;
+    /* font-family: 'Poppins', sans-serif; */
     /* background-color: #f5e7ee; */
   }
   /*

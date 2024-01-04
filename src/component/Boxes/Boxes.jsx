@@ -1,6 +1,6 @@
 import { FaUserSecret, FaCoins, FaUsers } from "react-icons/fa";
-import useDashboardHook from "../hook/useDashboardHook";
-import { Box } from "./Box";
+import useDashboardHook from "../../hook/useDashboardHook";
+import { Box } from "../Boxes/Box";
 
 export const Boxes = () => {
   const { getactivehost, getInactivehost, getnewrequest, gettotalcoin } =

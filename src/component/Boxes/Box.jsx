@@ -1,5 +1,6 @@
 import { CustomProgressBar } from "./CustomProgressBar";
 
+// eslint-disable-next-line react/prop-types
 export const Box = ({ title, icon, numbers, color }) => {
   return (
     <div

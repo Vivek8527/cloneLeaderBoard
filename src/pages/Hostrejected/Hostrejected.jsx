@@ -8,11 +8,14 @@ import baseUrl from "../../baseUrl";
 import TableContainer from "../../component/Tablecontainer/TableContainer";
 import Loading from "../../component/Loader/loading";
 import Pagination from "../Pagination/pagination";
-import { Navbar } from "../../component/Navbar/Navbar";
+// import { Navbar } from "../../component/Navbar/Navbar";
 import { PiMagnifyingGlassThin } from "react-icons/pi";
 import { FaEye } from "react-icons/fa";
+import ImagePopUpModal from "../../component/ImagePopupModal";
+import { useNavigate } from "react-router-dom";
 
 const Hostrejected = () => {
+
   const [gethostrejected, setgetHostrejected] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -21,6 +24,10 @@ const Hostrejected = () => {
   const [totalCount, setTotalCount] = useState(1);
   const [totalpages, setTotalPages] = useState(1);
   const [value, setValue] = useState("");
+  const [showImage, setShowImage] = useState(false);
+  const [images, setImages] = useState("");
+
+
 
   useEffect(() => {
     fetchHostrejected();
@@ -45,6 +52,16 @@ const Hostrejected = () => {
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  const handleImage = (images) => {
+    setShowImage(true);
+    console.log(images);
+    setImages(images);
+  };
+
+  const handleImageClose = () => {
+    setShowImage(false);
   };
 
   return (
@@ -75,14 +92,22 @@ const Hostrejected = () => {
               gethostrejected?.map((rowData, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{rowData?._id}</td>
+                  <td title={rowData._id}>
+                    {rowData._id.substring(0, 7) + "..."}
+                  </td>
                   <td>{rowData?.name}</td>
                   <td>{rowData?.dateOfBirth}</td>
                   <td>{rowData?.proffession}</td>
                   <td>{rowData?.addBio}</td>
                   <td>{rowData?.rejectedat}</td>
-                  <td style={{alignItems:"-webkit-center",
-                  }}> <FaEye /> </td>
+                  <td style={{ textAlign: "-webkit-center" }}>
+                    {rowData?.presentationPic ? (
+                      <FaEye
+                        style={{ cursor: "pointer", fontSize: "16px" }}
+                        onClick={() => handleImage(rowData?.presentationPic)}
+                      />
+                    ) : null}
+                  </td>
                 </tr>
               ))
             ) : (
@@ -100,6 +125,12 @@ const Hostrejected = () => {
           totalCount={totalCount}
           totalPages={totalpages}
           options={[1, 2, 3, 10]}
+        />
+
+        <ImagePopUpModal
+          open={showImage}
+          handleClose={handleImageClose}
+          images={images}
         />
 
         {isloading && <Loading />}

@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 export const CustomProgressBar = ({ color, value, max }) => {
   const progressStyle = {
     width: `${(value / max) * 100}%`,

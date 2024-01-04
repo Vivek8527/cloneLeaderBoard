@@ -76,8 +76,8 @@ export function Navbar() {
               "aria-labelledby": "basic-button",
             }}
           >
-            {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
-            {/* <MenuItem
+            {/* <MenuItem onClick={handleClose}>Profile</MenuItem> 
+           <MenuItem
               onClick={handleClose}
             >
           
@@ -115,6 +115,7 @@ export function Navbar() {
                 fontSize: "15px",
                 borderRadius: "5px",
                 color: "white",
+                
               }}
               onClick={handleLogout}
             >

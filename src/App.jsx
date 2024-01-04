@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import sidebar from "./component/sidebar";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import Dashboard from "./component/Dashboard/Dashboard";
 import "./App.css";
-import Layout from "./pages/Layout";
+import Layout from "./pages/Layout/Layout";
 import Hostrejected from "./pages/Hostrejected/Hostrejected";
 import Hostaccepted from "./pages/Acceptedhost/Hostaccepted";
 import HostRequest from "./pages/Hostrequest/Hostrequest";
 import Loginpage from "./pages/Loginpage/login";
+import Report from "./pages/Report/Report";
 
 const App = () => {
   return (
@@ -36,7 +37,7 @@ const App = () => {
             path="/Hostaccepted"
             element={
               <Layout>
-                <Hostaccepted/>
+                <Hostaccepted />
               </Layout>
             }
           />
@@ -48,8 +49,14 @@ const App = () => {
               </Layout>
             }
           />
-
-        
+          <Route
+            path="/report"
+            element={
+              <Layout>
+                <Report />
+              </Layout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

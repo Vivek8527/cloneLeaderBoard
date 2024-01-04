@@ -1,13 +1,10 @@
-.container{
-    display: flex;
-}
 
 main{
     width: 100%;
-    padding: 40px;
+    padding: 35px;
 }
 .sidebar{
-    background-color: #ea6399;
+    background-color: #ef4689;
     width: 230px;
     height: 100vh;
     transition: all 0.3s;
@@ -17,72 +14,74 @@ main{
     border-right: 12px solid #ea9dc7;
     box-shadow: 10px 0 #efb8ce;
     overflow: hidden;
-    /* scroll-behavior: smooth; */
+    cursor: pointer;
+}
+
+
+.sidebars_icons_dashboard{
+    cursor: pointer;
+    padding-left: 3.5rem;
+    /* padding: 10px 30px; */
+
+}
+
+.sidebars_icons_dashboard :hover{
+    color: white;
+}
+
+
+.icon{
+    display: flex;
+    color: white;
+    font-size: 35px;
 }
 
 .top_section{
     display: flex;
     align-items: center;
-    padding: 30px 10px;
+    padding: 20px 15px;
     justify-content: space-between;
-    /* padding-right: 2rem; */
-
-    
-
 }
 
 .bars{
+    display: flex;
     font-size: 30px;
-     margin-top: 1rem; 
-     /* padding-left: 7rem;  */
      color: #fff;
+     cursor: pointer;
 }
 
-
-
  .link{
-    color: #E94B89;
-    background-color: white;
-    gap: 14px; 
-    transition: all 0.3s;
-    font-size: 1.5rem;   
+    /* color: #E94B89; */
+     background-color: white;
     text-decoration: none;
-    border-top-left-radius: 20px;
-    height: 6vh;
-     margin-left: 60px;
+    border-top-left-radius: 15px;
+    height: 5vh;
+     margin-left: 10px;
     cursor: pointer; 
     margin-bottom: 15px; 
     display: flex;
      align-items: center;
-    padding-inline: 10px;
-
-    
+    padding: 10px 15px;
 }
-.link:hover{
-    background-color: #dbc4d1;
+.link :hover{
+    color: #e94b89;
 }
 
 .link-text{
     font-size: 16px;
     cursor: pointer;
-    /* color: white; */
-    /* height: 20px; */
-    
 }
 
 
 
 .sub-link-text{
     text-decoration: none;
-    padding-left: 60px; 
     font-size: 17px;
-    /* height: 20px;     */
-    margin-bottom: -20px;
-    /* color: rgba(255, 255, 255, 0.68); */
-    color: white;
+    margin-bottom: 10px;
+
 
 }
 .sub-link-text:hover{
-    color: #dccdd5;
+    color: white;
 }
 

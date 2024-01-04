@@ -9,6 +9,7 @@ import Loading from "../../component/Loader/loading";
 import { PiAlignBottom, PiMagnifyingGlassThin } from "react-icons/pi";
 import Pagination from "../Pagination/pagination";
 import { FaEye } from "react-icons/fa";
+import ImagePopUpModal from "../../component/ImagePopupModal";
 
 const Hostrequest = () => {
   const [getHostRequest, setgetHostRequest] = useState(null);
@@ -19,7 +20,8 @@ const Hostrequest = () => {
   const [totalcount, setTotalCount] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [value, setValue] = useState("");
-  const [showImage, setShowImage] = useState(false);
+  const [showImage , setShowImage] = useState(false);
+  const [ images ,SetImages] = useState (false);
 
   useEffect(() => {
     fetchHostRequest();
@@ -49,7 +51,10 @@ const Hostrequest = () => {
 
   const handleImage = () => {
     setShowImage(true);
+    console.log(images)
+    SetImages(images);
   };
+
 
   const handleImageClose = () => {
     setShowImage(false);
@@ -82,7 +87,9 @@ const Hostrequest = () => {
               getHostRequest?.map((rowData, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{rowData?._id}</td>
+                  <td title={rowData._id}>
+                  {rowData._id.substring(0, 7) + "..."}
+                  </td>
                   <td>{rowData?.name}</td>
                   <td>{rowData?.gender}</td>
                   <td>{rowData?.dateOfBirth}</td>
@@ -94,8 +101,10 @@ const Hostrequest = () => {
                     }}
                   >
                     <FaEye
+                    style={{cursor:"pointer",fontSize:"16px"}}
                       onClick={() => handleImage(rowData?.presentationPic)}
                     />
+                    
                   </td>
                 </tr>
               ))
@@ -114,6 +123,13 @@ const Hostrequest = () => {
           totalCount={totalcount}
           totalPages={totalPages}
           options={[1, 2, 5, 10]}
+        />
+
+        <ImagePopUpModal
+
+          open={showImage}
+          handleClose={handleImageClose}
+          images={images}
         />
 
         {isloading && <Loading />}
